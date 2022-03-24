@@ -9,12 +9,7 @@ describe('Search elements', () => {
 
     it('search for elements with multiple results' , () =>{
 
-        cy.fixture('index').then((index) =>{
-
-            cy.get(index.searchBox).type('dress');
-            cy.get(index.searchButton).click();
-
-        })
+        cy.search('dress')
 
         cy.fixture('searchResult').then((searchResult) =>{
 
@@ -25,12 +20,7 @@ describe('Search elements', () => {
 
     it('search for elements with no results', () =>{
 
-        cy.fixture('index').then((index) =>{
-
-            cy.get(index.searchBox).type('qwerty');
-            cy.get(index.searchButton).click();
-
-        })
+        cy.search('qwerty')
 
         cy.fixture('searchResult').then((searchResult) =>{
 
